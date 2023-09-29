@@ -2,10 +2,11 @@ using System;
 using System.Collections.Generic;
 // using System.Linq;
 
+
 class Program
 {
-    static void Main(string[] args)
-    {
+    // static void Main(string[] args)
+    // {
         // Console.WriteLine("Hello Sandbox World!");
 
         // Console.WriteLine();
@@ -142,14 +143,30 @@ class Program
         //     Console.WriteLine($"The largest number is: {largest}");
         // }
 
-        void HelloWorld (string word)
+        // void HelloWorld (string word)
+        // {
+        //     Console.WriteLine($"Hello {word}!");
+        // }
+
+        // Console.Write("Please enter a word: ");
+        // string word = Console.ReadLine();
+
+        // HelloWorld(word);
+    // }
+
+    public class Student 
+    {
+        public string _fullName;
+        public int _currentYear;
+        public int _birthYear;
+        public double ComputeAge()
         {
-            Console.WriteLine($"Hello {word}!");
+            return _currentYear - _birthYear;
         }
-
-        Console.Write("Please enter a word: ");
-        string word = Console.ReadLine();
-
-        HelloWorld(word);
     }
+
+    Student person1 = new Student();
+    person1._fullName = "James Tubban";
+    
 }
+
