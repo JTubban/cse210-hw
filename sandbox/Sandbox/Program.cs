@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 // using System.Linq;
 
 
@@ -16,10 +17,19 @@ class Program
         // int number = int.Parse(valueInText);
         // Console.WriteLine(number);
 
+        // List<String> questions = new List<string>
+        // {
+        //     "What is the capital of France?",
+        //     "Who wrote the play 'Romeo and Juliet'?",
+        //     "What is the largest planet in our solar system?",
+        //     "How many continents are there on Earth?",
+        // };
+
         // Random
         // Random randomGenerator = new Random();
-        // int number = randomGenerator.Next(1, 11);
-        // Console.WriteLine(number);
+        // int index = randomGenerator.Next(questions.Count);
+        // Console.WriteLine(questions[index]);
+        // Console.WriteLine(randomGenerator.Next(3));
 
         // Loops
         // string response = "yes";
@@ -154,19 +164,102 @@ class Program
         // HelloWorld(word);
     // }
 
-    public class Student 
+    // public class Student 
+    // {
+    //     public string _fullName;
+    //     public int _currentYear;
+    //     public int _birthYear;
+    //     public double ComputeAge()
+    //     {
+    //         return _currentYear - _birthYear;
+    //     }
+    // }
+
+    // Student person1 = new Student();
+    // person1._fullName = "James Tubban";
+    
+    // static void Main(string[] args)
+    // {
+    //     Blind kitchen = new Blind();
+    //     kitchen._width = 60;
+    //     kitchen._height = 48;
+    //     kitchen._color = "white";
+
+    //     double materialAmount = kitchen.GetArea();
+    //     // Console.WriteLine(materialAmount);
+
+    //     Blind livingRoom = new Blind();
+    //     livingRoom._width = 72;
+    //     livingRoom._height = 52;
+    //     livingRoom._color = "gray";
+
+    //     double materialAmount1 = livingRoom.GetArea();
+    //     // Console.WriteLine(materialAmount1);
+
+    //     House johnsonHome = new House();
+
+    //     johnsonHome._blinds.Add(kitchen);
+    //     johnsonHome._blinds.Add(livingRoom);
+
+    //     johnsonHome._owner = "Johnson Family";
+    //     // johnsonHome._blinds[0]._width = 160;
+
+    //     // Console.WriteLine(johnsonHome._owner);
+    //     // Console.WriteLine(johnsonHome._blinds[1]._width);
+    //     // Console.WriteLine(johnsonHome._blinds[1].GetArea());
+    //     foreach (Blind b in johnsonHome._blinds)
+    //     {
+    //         Console.WriteLine(b.GetArea());
+    //     }
+    // }
+
+    // static void Main(string[] args)
+    // {
+    //     Job job1 = new Job();
+    //     job1._jobTitle = "Software Engineer";
+    //     job1._company = "Microsoft";
+    //     job1._startYear = 2019;
+    //     job1._endYear = 2022;
+
+    //     Job job2 = new Job();
+    //     job2._jobTitle = "Manager";
+    //     job2._company = "Apple";
+    //     job2._startYear = 2022;
+    //     job2._endYear = 2023;
+
+    //     // job1.Display();
+    //     // job2.Display();
+
+    //     Resume myResume = new Resume();
+    //     // myResume._myName = "Allison Rose";
+
+    //     myResume._jobs.Add(job1);
+    //     myResume._jobs.Add(job2);
+
+    //     myResume.Display();
+    // }
+
+    static void Main(string[] args) 
     {
-        public string _fullName;
-        public int _currentYear;
-        public int _birthYear;
-        public double ComputeAge()
-        {
-            return _currentYear - _birthYear;
+        // DateTime theCurrentTime = DateTime.Now;
+        // string dateText = theCurrentTime.ToShortDateString();
+
+        // Console.WriteLine(dateText);
+
+        // Console.WriteLine("James Tubban\nJuliet Tubban\nJaxx Tubban");
+
+        string filename = "journal.txt";
+        string[] lines = File.ReadAllLines(filename);
+
+        foreach (string line in lines)
+        {   
+            string[] parts = line.Split("|");
+            string firstName = parts[0];
+            string middleName = parts[1];
+            string lastName = parts[2];
+
+            Console.WriteLine($"{firstName} {middleName} {lastName}");
         }
     }
-
-    Student person1 = new Student();
-    person1._fullName = "James Tubban";
-    
 }
 
