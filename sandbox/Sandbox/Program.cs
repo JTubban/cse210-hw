@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime;
+using System.Security.Cryptography.X509Certificates;
 // using System.Linq;
 
 
@@ -239,27 +241,75 @@ class Program
     //     myResume.Display();
     // }
 
-    static void Main(string[] args) 
-    {
-        // DateTime theCurrentTime = DateTime.Now;
-        // string dateText = theCurrentTime.ToShortDateString();
+    // static void Main(string[] args) 
+    // {
+    //     DateTime theCurrentTime = DateTime.Now;
+    //     string dateText = theCurrentTime.ToShortDateString();
 
-        // Console.WriteLine(dateText);
+    //     Console.WriteLine(dateText);
 
-        // Console.WriteLine("James Tubban\nJuliet Tubban\nJaxx Tubban");
+    //     Console.WriteLine("James Tubban\nJuliet Tubban\nJaxx Tubban");
 
-        string filename = "journal.txt";
-        string[] lines = File.ReadAllLines(filename);
+    //     string filename = "journal.txt";
+    //     string[] lines = File.ReadAllLines(filename);
 
-        foreach (string line in lines)
-        {   
-            string[] parts = line.Split("|");
-            string firstName = parts[0];
-            string middleName = parts[1];
-            string lastName = parts[2];
+    //     foreach (string line in lines)
+    //     {   
+    //         string[] parts = line.Split("|");
+    //         string firstName = parts[0];
+    //         string middleName = parts[1];
+    //         string lastName = parts[2];
 
-            Console.WriteLine($"{firstName} {middleName} {lastName}");
-        }
+    //         Console.WriteLine($"{firstName} {middleName} {lastName}");
+    //     }
+    // }
+
+    //  static void Main(string[] args) 
+    // {
+    //     Account savings = new Account();
+        
+    // }
+    // static void Main(string[] args) 
+    // {   
+    //     // Account savings = new Account();
+    //     // savings._balance = 50;
+    //     // savings.Deposit(100);
+
+    //     // Console.WriteLine(savings._balance);
+    
+    //     List<Student> studentList = new List<Student>();
+
+    //     Student student1 = new Student();
+    //     student1._firstName = "James";
+    //     student1._lastName = "Tubban";
+    //     student1._age = 32;
+
+    //     Student student2 = new Student();
+    //     student2._firstName = "Juliet";
+    //     student2._lastName = "Taguiam";
+    //     student2._age = 31;
+
+    //     studentList.Add(student1);
+    //     studentList.Add(student2);
+
+    //     foreach(Student student in studentList) {
+    //         Console.WriteLine(student._firstName);
+    //         Console.WriteLine(student._lastName);
+    //     }
+
+    // }
+
+    // static void Main(string[] args) {
+    //     Account savings = new Account();
+    //     savings.Deposit(1000);
+    //     savings.Deposit(2000);
+    // }
+
+    static void Main(string[] args) {
+        Person p1 = new Person("Software Engineer", "James", "Tubban");
+        Person p2 = new Person();
+        Console.WriteLine(p1.GetFormalSigniture());
+        Console.WriteLine(p2.GetFormalSigniture());
     }
 }
 

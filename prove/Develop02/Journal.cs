@@ -71,7 +71,6 @@ public class Journal
 
             _entries.Add(newEntry);
         }
-
         Console.WriteLine($"'{filename}' Loaded!");
     }
 
