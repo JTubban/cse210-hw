@@ -1,16 +1,63 @@
 public class Scripture
 {
-    private Reference _reference = new Reference("Proverbs", 3, 5);
-    private Reference _reference1 = new Reference("Proverbs", 3, 5, 6);
-    private List<Word> _words = new List<Word>();
+    public string reference { get; set; }
 
-    private Word AddToList()
+    public string text { get; set; }
+
+    private List<Word> words;
+
+    public Scripture(string reference, string text)
     {
-        _words.Add("Trust in the Lord with all thine heart; and lean not unto thine own dunderstanding; In all thy ways acknowledge him, and he shall direct thy paths.");
+        this.reference = reference;
+        this.text = text;
+        this.words = text.Split(' ').Select(word => new Word(word)).ToList();
     }
-    public string GetPrompt()
+
+    public void HideRandomWords(int count)
     {
-        AddToList();
-        return _reference1.Prompt(_words[0]);
+        if (words.Count - CountWordsHidden() < count)
+        {
+            count = words.Count - CountWordsHidden();
+        }
+
+        int hidden = 0;
+        Random rand = new Random();
+        while (hidden < count)
+        {
+            int index = rand.Next(words.Count);
+            if (!words[index].IsHidden())
+            {
+                words[index].Hide();
+                hidden++;
+            }
+        }
+    }
+
+    public bool AllWordsHidden()
+    {
+        return words.All(word => word.IsHidden());
+    }
+
+    public int CountWordsHidden()
+    {
+        int count = 0;
+        foreach (Word word in words)
+        {
+            if (word.IsHidden())
+            {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public override string ToString()
+    {
+        return $"{reference}\n{text}";
+    }
+
+    public string ToStringAllHidden()
+    {
+        return $"{reference}\n{string.Join(" ", words.Select(word => word.IsHidden() ? new string('_', word.Text.Length) : word.Text))}";
     }
 }

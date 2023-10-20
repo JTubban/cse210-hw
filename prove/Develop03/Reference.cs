@@ -7,20 +7,26 @@ public class Reference
 
     public Reference(string book, int chapter, int verseStart)
     {
-        _book = book;
-        _chapter = chapter;
-        _verseStart = verseStart;
+        this._book = book;
+        this._chapter = chapter;
+        this._verseStart = verseStart;
     }
 
     public Reference(string book, int chapter, int verseStart, int verseEnd)
     {
-        _book = book;
-        _chapter = chapter;
-        _verseStart = verseStart;
-        _verseEnd = verseEnd;
+        this._book = book;
+        this._chapter = chapter;
+        this._verseStart = verseStart;
+        this._verseEnd = verseEnd;
     }
 
-    public string Prompt(string word) {
-        return $"{_book} {_chapter}:{_verseStart}{-_verseEnd} {word}";
+    public string DisplaySingle()
+    {
+        return $"{_book} {_chapter}:{_verseStart}";
+    }
+
+    public string DisplayDouble()
+    {
+        return $"{_book} {_chapter}:{_verseStart}-{_verseEnd}";
     }
 }
