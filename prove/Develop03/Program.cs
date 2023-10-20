@@ -18,23 +18,28 @@ class Program
         int difficulty = UserInterface.GetMenuOption() * 2;
         Thread.Sleep(100);
 
+        // Display the scripture verse(s) and prompt the user to either press "Enter" or to type "quit".
         Console.Clear();
         Console.WriteLine(scripture.ToString());
         string input = UserInterface.Prompt("Press Enter to begin, or type 'quit' to exit:");
 
+        // Hide words one by one until all words are hidden or the user types "quit".
         while (!scripture.AllWordsHidden() && !input.Equals("quit"))
         {
+            // Hide some random words and display the modified scripture.
             scripture.HideRandomWords(difficulty);
             Console.Clear();
             Console.WriteLine(scripture.ToStringAllHidden());
 
             if (scripture.AllWordsHidden())
             {
+                // Display the final scripture with all words hidden.
                 Console.WriteLine("Press Enter to exit.");
                 Console.ReadLine();
             }
             else
             {
+                // Prompt the user to press "Enter" or type "quit".
                 input = UserInterface.Prompt("Press Enter to continue, or type 'quit' to exit:");
             }
         }
@@ -50,6 +55,7 @@ class Program
             Console.Write("Enter the path to the JSON file containing the scriptures (HINT: type 'verses.json'): ");
             fileName = Console.ReadLine();
 
+            // Check if the file name is valid
             try
             {
                 new FileInfo(fileName);
@@ -113,6 +119,7 @@ class UserInterface
             Console.Write("> ");
             string input = Console.ReadLine();
 
+            // check if input is a valid number between 1 and 3
             if (int.TryParse(input, out int number) && number >= 1 && number <= 3)
             {
                 return int.Parse(input);
