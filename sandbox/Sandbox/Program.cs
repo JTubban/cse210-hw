@@ -1,13 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Runtime;
-using System.Security.Cryptography.X509Certificates;
+// using System;
+// using System.Collections.Generic;
+// using System.IO;
+// using System.Runtime;
+// using System.Security.Cryptography.X509Certificates;
 // using System.Linq;
 
 
-class Program
-{
+// class Program
+// {
     // static void Main(string[] args)
     // {
         // Console.WriteLine("Hello Sandbox World!");
@@ -305,11 +305,494 @@ class Program
     //     savings.Deposit(2000);
     // }
 
-    static void Main(string[] args) {
-        Person p1 = new Person("Software Engineer", "James", "Tubban");
-        Person p2 = new Person();
-        Console.WriteLine(p1.GetFormalSigniture());
-        Console.WriteLine(p2.GetFormalSigniture());
+    // static void Main(string[] args) {
+    //     Person p1 = new Person("Software Engineer", "James", "Tubban");
+    //     Person p2 = new Person();
+    //     Console.WriteLine(p1.GetFormalSigniture());
+    //     Console.WriteLine(p2.GetFormalSigniture());
+    // }
+
+    // static void Main(string[] args)
+    // {
+        // // Create Instance
+        // Fraction fraction1 = new Fraction(10);
+
+        // Console.WriteLine(fraction1.GetStringValue());
+        // Console.WriteLine(fraction1.GetDecimalValue());
+
+        // Random generateRandom = new Random();
+        // List<string> myList = new List<string>{"My", "name", "is", "James", "I", "live", "in", "Cagayan", "Valley"};
+        // int index = generateRandom.Next(myList.Count);
+
+        // Console.WriteLine(myList[index]);
+
+        // string joinedString = string.Join(" ", myList);
+        // Console.WriteLine(joinedString);
+
+        // string myName = "James";
+        // int nameLength = myName.Length;
+
+        // myName = "-" * nameLength;
+
+        // Console.WriteLine(myName);
+
+
+
+        // Console.WriteLine(myList[1]);
+        
+        // Console.WriteLine(generateRandom.Next(0, 2));
+        // Console.WriteLine(myList[generateRandom.Next(myList.Count)]);
+        // foreach(string l in myList) {
+        //     Console.WriteLine(l);
+        // }
+
+        // IMPORTANT!!!!
+        // string myName = "James";
+        // string myString = new string('_', myName.Length);
+        // Console.WriteLine(myString);
+    // }
+
+//     static void Main(string[] args)
+//     {
+//         List<string> words = new List<string>
+//         {
+//             "apple", "banana", "cherry", "date", "elderberry", "fig", "grape", "honeydew", "kiwi", "lemon"
+//         };
+
+//         Random random = new Random();
+
+//         while (true)
+//         {
+//             Console.Clear();
+//             Console.WriteLine("Press Enter to hide a random word:");
+//             Console.WriteLine();
+
+//             foreach (string word in words)
+//             {
+//                 Console.Write(random.Next(2) == 0 ? HideWord(word) : word);
+//                 Console.Write(" ");
+//             }
+
+//             Console.ReadLine();
+
+//         }
+//     }
+
+//     static string HideWord(string word)
+//     {
+//         return new string('_', word.Length);
+//     }
+
+//     public class Word1
+//     {
+//         public string _word;
+//         public bool _isHidden;
+//     }
+
+//     static void Main(string[] args) 
+//     {
+//         Word1 word1 = new Word1();
+//         word1._word = "My name is James and I live in the Philippines.";
+//         word1._isHidden = false;
+
+//         List<Word1> wordList = new List<Word1>();
+//         wordList.Add(word1);
+
+//         List<string> strings = new List<string>();
+
+//         string getSentence = wordList[0]._word;
+
+//         foreach(string l in getSentence.Split(" ")) {
+//             strings.Add(l);
+//         }
+
+//         List<string> randomWords = GenerateRandom(strings, 3);
+        
+//         Console.WriteLine("Random Words:");
+//         foreach(string word in randomWords) {
+//             Console.WriteLine(word);
+//         }
+//     }
+
+//     static List<string> GenerateRandom(List<string> wordList, int count)
+//     {
+//         Random random = new Random();
+//         List<string> selectedWords = new List<string>();
+
+//         for(int i = 0; i < count; i++)
+//         {
+//             int index = random.Next(0, wordList.Count);
+//             // randomWords.Add(wordList[index]);
+//             string word = wordList[index];
+
+//             // Replace the word with underscores
+//             string underscoreWord = new string('_', word.Length);
+//             selectedWords.Add(underscoreWord);
+//         }
+
+//         return selectedWords;
+//     }
+
+// }
+
+
+
+//     static void Main()
+//     {
+//         List<string> wordList = new List<string>
+//         {
+//             "apple", "banana", "cherry", "dog", "elephant",
+//             "frog", "grape", "hamburger", "igloo", "jazz"
+//         };
+
+//         int numberOfWordsToGenerate = 3; // Change this to the number of random words you want to replace.
+
+//         List<string> randomWords = GenerateRandomWords(wordList, numberOfWordsToGenerate);
+
+//         Console.WriteLine("Random Words:");
+//         foreach (string word in randomWords)
+//         {
+//             Console.WriteLine(word);
+//         }
+
+//         ReplaceWordsWithUnderscores(wordList, randomWords);
+
+//         Console.WriteLine("\nOriginal List with Replaced Words:");
+//         foreach (string word in wordList)
+//         {
+//             Console.WriteLine(word);
+//         }
+//     }
+
+//     static List<string> GenerateRandomWords(List<string> wordList, int count)
+//     {
+//         Random random = new Random();
+//         List<string> randomWords = new List<string>();
+
+//         for (int i = 0; i < count; i++)
+//         {
+//             int index = random.Next(0, wordList.Count);
+//             randomWords.Add(wordList[index]);
+//             wordList.RemoveAt(index); // Remove the word from the original list.
+//         }
+
+//         return randomWords;
+//     }
+
+//     static void ReplaceWordsWithUnderscores(List<string> wordList, List<string> randomWords)
+//     {
+//         foreach (string word in randomWords)
+//         {
+//             string underscoredWord = new string('_', word.Length);
+//             wordList.Add(underscoredWord); // Put the underscored word back in the original list.
+//         }
+//     }
+
+// }
+
+// class Program
+// {
+//     static void Main()
+//     {
+//         Scripture scripture1 = new Scripture("John 3:16", "For God so loved the world that he gave his one and only Son...");
+//         Scripture scripture2 = new Scripture("Proverbs 3:5-6", "Trust in the Lord with all your heart and lean not on your own understanding; in all your ways submit to him...");
+
+//         var storage = new List<Scripture>();
+//         storage.Add(scripture1);
+//         storage.Add(scripture2);
+
+//         Console.WriteLine("Welcome to the Scripture Memorizer program!");
+//         Console.WriteLine("Press Enter to reveal scripture or type 'quit' to exit.");
+
+//         while (true)
+//         {
+//             var randomScripture = storage.scriptures[new Random().Next(storage.scriptures.Count)];
+//             randomScripture.Display();
+//             ConsoleKeyInfo keyInfo = Console.ReadKey();
+            
+//             if (keyInfo.Key == ConsoleKey.Enter)
+//             {
+//                 randomScripture.HideRandomWord();
+//                 if (randomScripture.AllWordsHidden())
+//                 {
+//                     Console.Clear();
+//                     Console.WriteLine("Congratulations! You've hidden all the words in this scripture.");
+//                     break;
+//                 }
+//             }
+//             else if (keyInfo.Key == ConsoleKey.Q && keyInfo.Modifiers == ConsoleModifiers.Control)
+//             {
+//                 Console.Clear();
+//                 Console.WriteLine("Exiting the program.");
+//                 break;
+//             }
+//         }
+//     }
+// }
+
+// using System;
+// using System.Collections.Generic;
+// using System.Linq;
+
+// class Scripture
+// {
+//     public string Reference { get; }
+//     public string Text { get; }
+
+//     private List<string> hiddenWords;
+
+//     public Scripture(string reference, string text)
+//     {
+//         Reference = reference;
+//         Text = text;
+//         hiddenWords = new List<string>();
+//     }
+
+//     public bool AreAllWordsHidden()
+//     {
+//         return hiddenWords.Count == Text.Split(' ').Length;
+//     }
+
+//     public void HideRandomWord()
+//     {
+//         string[] words = Text.Split(' ');
+//         Random random = new Random();
+//         int randomIndex;
+//         do
+//         {
+//             randomIndex = random.Next(0, words.Length);
+//         } while (hiddenWords.Contains(words[randomIndex]));
+
+//         hiddenWords.Add(words[randomIndex]);
+//         words[randomIndex] = new string('_', words[randomIndex].Length);
+//         Text = string.Join(" ", words);
+//     }
+// }
+
+// class ScriptureMemorizer
+// {
+//     private List<Scripture> scriptures;
+//     private int currentScriptureIndex;
+
+//     public ScriptureMemorizer()
+//     {
+//         scriptures = new List<Scripture>();
+//         currentScriptureIndex = 0;
+//     }
+
+//     public void AddScripture(Scripture scripture)
+//     {
+//         scriptures.Add(scripture);
+//     }
+
+//     public void MemorizeScriptures()
+//     {
+//         Console.Clear();
+//         Console.WriteLine("Welcome to the Scripture Memorizer program!");
+//         Console.WriteLine("Press Enter to reveal the scripture, or type 'quit' to exit.");
+
+//         while (currentScriptureIndex < scriptures.Count)
+//         {
+//             var currentScripture = scriptures[currentScriptureIndex];
+
+//             if (currentScripture.AreAllWordsHidden())
+//             {
+//                 Console.Clear();
+//                 Console.WriteLine("You've memorized this scripture!");
+//                 currentScriptureIndex++;
+//                 continue;
+//             }
+
+//             currentScripture.HideRandomWord();
+//             currentScripture.Display();
+//             string input = Console.ReadLine();
+
+//             if (input.ToLower() == "quit")
+//             {
+//                 Console.Clear();
+//                 Console.WriteLine("Exiting the program.");
+//                 break;
+//             }
+//         }
+//     }
+// }
+
+// class Program
+// {
+//     static void Main()
+//     {
+//         var memorizer = new ScriptureMemorizer();
+
+//         // Add your scriptures here
+//         memorizer.AddScripture(new Scripture("John 3:16", "For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life."));
+//         memorizer.AddScripture(new Scripture("Proverbs 3:5-6", "Trust in the Lord with all your heart and lean not on your own understanding; in all your ways submit to him, and he will make your paths straight."));
+
+//         memorizer.MemorizeScriptures();
+//     }
+// }
+
+// using System;
+
+
+// class Program
+// {
+
+//     static void Main(string[] args)
+//     {
+//         Reference scriptureReference = new Reference("Proverbs","3","5-6");
+//         Scripture scripture = new Scripture(scriptureReference, "Trust in the lord with all thine heart; and lean not unto thine own understanding; in all thy ways acknowledge him, and he shall direct thy paths.");
+//         ScriptureMemorizer scriptureMemorizer = new ScriptureMemorizer(scripture);
+
+//         string userInput = "";
+
+//         while (userInput != "quit" && scriptureMemorizer.HasWordsLeft() == true)
+//         {
+//             Console.Clear();
+//             Console.WriteLine(string.Format("{0} {1}", scriptureReference.toString(), scriptureMemorizer.ToString()));
+//             Console.WriteLine();
+//             Console.ReadLine();
+//             scriptureMemorizer.removeWordsFromText();
+//         }
+//     }
+// }
+
+using System;
+using System.Collections.Generic;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        string filename = GetFileName();
+        List<Scripture> scriptures = LoadScripturesFromFile(filename);
+
+        Random random = new Random();
+        int index = random.Next(scriptures.Count);
+        Scripture scripture = scriptures[index];
+
+        UserInterface.DisplayMainMenu();
+        int difficulty = UserInterface.GetMenuOption() * 2;
+        Thread.Sleep(100);
+
+        // Display the complete scripture and prompt the user to press "Enter" or type "quit".
+        Console.Clear();
+        Console.WriteLine(scripture.ToString());
+        string input = UserInterface.Prompt("Press Enter to begin, or type 'quit' to exit:");
+
+        // Hide words one by one until all words are hidden or the user types "quit".
+        while (!scripture.AllWordsHidden() && !input.Equals("quit"))
+        {
+            // Hide some random words and display the modified scripture.
+            scripture.HideRandomWords(difficulty);
+            Console.Clear();
+            Console.WriteLine(scripture.ToStringAllHidden());
+
+            if (scripture.AllWordsHidden())
+            {
+                // Display the final scripture with all words hidden.
+                Console.WriteLine("Press Enter to exit.");
+                Console.ReadLine();
+            }
+            else
+            {
+                // Prompt the user to press "Enter" or type "quit".
+                input = UserInterface.Prompt("Press Enter to continue, or type 'quit' to exit:");
+            }
+        }
+    }
+
+    public static string GetFileName()
+    {
+        string fileName = "";
+        bool isValidFileName = false;
+
+        while (!isValidFileName)
+        {
+            Console.Write("Enter the path to the JSON file containing the scriptures: ");
+            fileName = Console.ReadLine();
+
+            // Check if the file name is valid
+            try
+            {
+                new FileInfo(fileName);
+                isValidFileName = true;
+            }
+            catch (ArgumentException)
+            {
+                Console.WriteLine("Invalid file name. Please enter a valid file name.");
+            }
+            catch (PathTooLongException)
+            {
+                Console.WriteLine("File path is too long. Please enter a shorter file name.");
+            }
+            catch (NotSupportedException)
+            {
+                Console.WriteLine("Invalid file name. Please enter a valid file name.");
+            }
+        }
+
+        return fileName;
+    }
+
+    public static List<Scripture> LoadScripturesFromFile(string filename)
+    {
+        List<Scripture> scriptures = new List<Scripture>();
+        try
+        {
+            using (StreamReader reader = new StreamReader(filename))
+            {
+                string json = reader.ReadToEnd();
+                scriptures = JsonSerializer.Deserialize<List<Scripture>>(json);
+            }
+            Console.WriteLine($"Scriptures loaded from file: {filename}");
+        }
+        catch
+        {
+            Console.WriteLine($"Error loading scriptures from file: {filename}");
+        }
+        return scriptures;
     }
 }
 
+class UserInterface
+{
+    public static void DisplayMainMenu()
+    {
+        int DELAY = 50;
+
+        Console.WriteLine("\nScripture Memorizer App");
+        Thread.Sleep(DELAY);
+        Console.WriteLine("=======================");
+        Thread.Sleep(DELAY);
+        Console.WriteLine("On a scale from 1 to 3, choose the level of difficulty for the game?");
+        Console.WriteLine("Where 1 is easy, and 3 is hard.");
+    }
+
+    public static int GetMenuOption()
+    {
+        while (true)
+        {
+            Console.Write("> ");
+            string input = Console.ReadLine();
+
+            // check if input is a valid number between 1 and 3
+            if (int.TryParse(input, out int number) && number >= 1 && number <= 3)
+            {
+                return int.Parse(input);
+            }
+            else
+            {
+                Console.WriteLine("Invalid input. Please enter a number between 1 and 3.");
+            }
+        }
+    }
+
+    public static string Prompt(string message)
+    {
+        Console.Write(message + " ");
+        return Console.ReadLine().Trim().ToLower();
+    }
+}
