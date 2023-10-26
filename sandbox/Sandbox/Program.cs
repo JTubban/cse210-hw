@@ -656,143 +656,314 @@
 //     }
 // }
 
-using System;
-using System.Collections.Generic;
-using System.Text.Json;
-using System.Text.Json.Serialization;
+// using System;
+// using System.Collections.Generic;
+// using System.Text.Json;
+// using System.Text.Json.Serialization;
 
 
-class Program
+// class Program
+// {
+//     static void Main(string[] args)
+//     {
+//         string filename = GetFileName();
+//         List<Scripture> scriptures = LoadScripturesFromFile(filename);
+
+//         Random random = new Random();
+//         int index = random.Next(scriptures.Count);
+//         Scripture scripture = scriptures[index];
+
+//         UserInterface.DisplayMainMenu();
+//         int difficulty = UserInterface.GetMenuOption() * 2;
+//         Thread.Sleep(100);
+
+//         // Display the complete scripture and prompt the user to press "Enter" or type "quit".
+//         Console.Clear();
+//         Console.WriteLine(scripture.ToString());
+//         string input = UserInterface.Prompt("Press Enter to begin, or type 'quit' to exit:");
+
+//         // Hide words one by one until all words are hidden or the user types "quit".
+//         while (!scripture.AllWordsHidden() && !input.Equals("quit"))
+//         {
+//             // Hide some random words and display the modified scripture.
+//             scripture.HideRandomWords(difficulty);
+//             Console.Clear();
+//             Console.WriteLine(scripture.ToStringAllHidden());
+
+//             if (scripture.AllWordsHidden())
+//             {
+//                 // Display the final scripture with all words hidden.
+//                 Console.WriteLine("Press Enter to exit.");
+//                 Console.ReadLine();
+//             }
+//             else
+//             {
+//                 // Prompt the user to press "Enter" or type "quit".
+//                 input = UserInterface.Prompt("Press Enter to continue, or type 'quit' to exit:");
+//             }
+//         }
+//     }
+
+//     public static string GetFileName()
+//     {
+//         string fileName = "";
+//         bool isValidFileName = false;
+
+//         while (!isValidFileName)
+//         {
+//             Console.Write("Enter the path to the JSON file containing the scriptures: ");
+//             fileName = Console.ReadLine();
+
+//             // Check if the file name is valid
+//             try
+//             {
+//                 new FileInfo(fileName);
+//                 isValidFileName = true;
+//             }
+//             catch (ArgumentException)
+//             {
+//                 Console.WriteLine("Invalid file name. Please enter a valid file name.");
+//             }
+//             catch (PathTooLongException)
+//             {
+//                 Console.WriteLine("File path is too long. Please enter a shorter file name.");
+//             }
+//             catch (NotSupportedException)
+//             {
+//                 Console.WriteLine("Invalid file name. Please enter a valid file name.");
+//             }
+//         }
+
+//         return fileName;
+//     }
+
+//     public static List<Scripture> LoadScripturesFromFile(string filename)
+//     {
+//         List<Scripture> scriptures = new List<Scripture>();
+//         try
+//         {
+//             using (StreamReader reader = new StreamReader(filename))
+//             {
+//                 string json = reader.ReadToEnd();
+//                 scriptures = JsonSerializer.Deserialize<List<Scripture>>(json);
+//             }
+//             Console.WriteLine($"Scriptures loaded from file: {filename}");
+//         }
+//         catch
+//         {
+//             Console.WriteLine($"Error loading scriptures from file: {filename}");
+//         }
+//         return scriptures;
+//     }
+// }
+
+// class UserInterface
+// {
+//     public static void DisplayMainMenu()
+//     {
+//         int DELAY = 50;
+
+//         Console.WriteLine("\nScripture Memorizer App");
+//         Thread.Sleep(DELAY);
+//         Console.WriteLine("=======================");
+//         Thread.Sleep(DELAY);
+//         Console.WriteLine("On a scale from 1 to 3, choose the level of difficulty for the game?");
+//         Console.WriteLine("Where 1 is easy, and 3 is hard.");
+//     }
+
+//     public static int GetMenuOption()
+//     {
+//         while (true)
+//         {
+//             Console.Write("> ");
+//             string input = Console.ReadLine();
+
+//             // check if input is a valid number between 1 and 3
+//             if (int.TryParse(input, out int number) && number >= 1 && number <= 3)
+//             {
+//                 return int.Parse(input);
+//             }
+//             else
+//             {
+//                 Console.WriteLine("Invalid input. Please enter a number between 1 and 3.");
+//             }
+//         }
+//     }
+
+//     public static string Prompt(string message)
+//     {
+//         Console.Write(message + " ");
+//         return Console.ReadLine().Trim().ToLower();
+//     }
+// }
+
+// class Person
+// {
+//     public string GetName() {
+//         return "John";
+//     }
+// }
+
+// class Student1: Person
+// {
+//     public int GetId() {
+//         return 12345;
+//     }
+// }
+
+// class Program
+// {
+//     static void Main(string[] args) {
+//         Student1 student = new Student1();
+
+//         Console.WriteLine(student.GetId());
+//         Console.WriteLine(student.GetName());
+
+//     }
+// }
+
+// a parent class called Person
+// public class Person1
+// {   protected string _name;
+//     private string _lastName;
+//     // Person constructor
+//     public Person1(string name, string lastName)
+//     {
+//         _name = name;
+//         _lastName = lastName;
+//     }
+
+//     public string GetName()
+//     {
+//         return _name;
+//     }
+
+//     public string GetLastName()
+//     {
+//         return _lastName;
+//     }
+// }
+
+// // a child class called Student
+// public class Stud : Person1
+// {
+//     private string _number;
+    
+//     // calling the parent constructor using "base"!
+//     public Stud(string name, string lastName, string number) : base(name, lastName)
+//     {
+//         _number = number;
+//     }
+
+//     public string GetNumber()
+//     {
+//         return _number;
+//     }
+
+//     public string StudentInfo()
+//     {
+//         // ERROR! This line doesn't work, because _name is private in the base class
+//         return _name + " " + _number;
+//     }
+// }
+
+// class Program
+// {
+//     static void Main(string[] args) {
+//         Stud student = new Stud("Brigham", "Young", "234");
+//         string name = student.GetName();
+//         string number = student.GetNumber();
+//         string last = student.GetLastName();
+//         string fullName = $"{name} {last} {number}";
+//         Console.WriteLine(name);
+//         Console.WriteLine(last);
+//         Console.WriteLine(number);
+//         Console.WriteLine(fullName);
+//     }
+// }
+
+// Equivalent of Stud class
+// public class Stud
+// {
+//     private string _name;
+//     private string _lastName;
+//     private string _number;
+
+//     public Stud(string name, string lastName, string number)
+//     {
+//         _name = name;
+//         _lastName = lastName;
+//         _number = number;
+//     }
+
+//     public string GetName()
+//     {
+//         return _name;
+//     }
+
+//     public string GetLastName()
+//     {
+//         return _lastName;
+//     }
+
+//     public string GetNumber()
+//     {
+//         return _number;
+//     }
+// }
+
+// BOOK
+public class Book
 {
-    static void Main(string[] args)
+    protected string _author = "";
+    protected string _title = "";
+
+    public void SetAuthor(string author)
     {
-        string filename = GetFileName();
-        List<Scripture> scriptures = LoadScripturesFromFile(filename);
-
-        Random random = new Random();
-        int index = random.Next(scriptures.Count);
-        Scripture scripture = scriptures[index];
-
-        UserInterface.DisplayMainMenu();
-        int difficulty = UserInterface.GetMenuOption() * 2;
-        Thread.Sleep(100);
-
-        // Display the complete scripture and prompt the user to press "Enter" or type "quit".
-        Console.Clear();
-        Console.WriteLine(scripture.ToString());
-        string input = UserInterface.Prompt("Press Enter to begin, or type 'quit' to exit:");
-
-        // Hide words one by one until all words are hidden or the user types "quit".
-        while (!scripture.AllWordsHidden() && !input.Equals("quit"))
-        {
-            // Hide some random words and display the modified scripture.
-            scripture.HideRandomWords(difficulty);
-            Console.Clear();
-            Console.WriteLine(scripture.ToStringAllHidden());
-
-            if (scripture.AllWordsHidden())
-            {
-                // Display the final scripture with all words hidden.
-                Console.WriteLine("Press Enter to exit.");
-                Console.ReadLine();
-            }
-            else
-            {
-                // Prompt the user to press "Enter" or type "quit".
-                input = UserInterface.Prompt("Press Enter to continue, or type 'quit' to exit:");
-            }
-        }
+        _author = author;
     }
 
-    public static string GetFileName()
+    public void SetBookTitle(string title)
     {
-        string fileName = "";
-        bool isValidFileName = false;
-
-        while (!isValidFileName)
-        {
-            Console.Write("Enter the path to the JSON file containing the scriptures: ");
-            fileName = Console.ReadLine();
-
-            // Check if the file name is valid
-            try
-            {
-                new FileInfo(fileName);
-                isValidFileName = true;
-            }
-            catch (ArgumentException)
-            {
-                Console.WriteLine("Invalid file name. Please enter a valid file name.");
-            }
-            catch (PathTooLongException)
-            {
-                Console.WriteLine("File path is too long. Please enter a shorter file name.");
-            }
-            catch (NotSupportedException)
-            {
-                Console.WriteLine("Invalid file name. Please enter a valid file name.");
-            }
-        }
-
-        return fileName;
+        _title = title;
     }
 
-    public static List<Scripture> LoadScripturesFromFile(string filename)
+    public string GetBookInfo()
     {
-        List<Scripture> scriptures = new List<Scripture>();
-        try
-        {
-            using (StreamReader reader = new StreamReader(filename))
-            {
-                string json = reader.ReadToEnd();
-                scriptures = JsonSerializer.Deserialize<List<Scripture>>(json);
-            }
-            Console.WriteLine($"Scriptures loaded from file: {filename}");
-        }
-        catch
-        {
-            Console.WriteLine($"Error loading scriptures from file: {filename}");
-        }
-        return scriptures;
+        return $"{_title} by {_author}";
     }
 }
 
-class UserInterface
+public class PictureBook: Book
 {
-    public static void DisplayMainMenu()
+    private string _illustrator = "";
+    public void SetIllustrator(string illustrator)
     {
-        int DELAY = 50;
-
-        Console.WriteLine("\nScripture Memorizer App");
-        Thread.Sleep(DELAY);
-        Console.WriteLine("=======================");
-        Thread.Sleep(DELAY);
-        Console.WriteLine("On a scale from 1 to 3, choose the level of difficulty for the game?");
-        Console.WriteLine("Where 1 is easy, and 3 is hard.");
+        _illustrator = illustrator;
     }
 
-    public static int GetMenuOption()
+    public string GetPictureBookInfo()
     {
-        while (true)
-        {
-            Console.Write("> ");
-            string input = Console.ReadLine();
-
-            // check if input is a valid number between 1 and 3
-            if (int.TryParse(input, out int number) && number >= 1 && number <= 3)
-            {
-                return int.Parse(input);
-            }
-            else
-            {
-                Console.WriteLine("Invalid input. Please enter a number between 1 and 3.");
-            }
-        }
+        return $"{_title} by {_author} illustrated by {_illustrator}.";
     }
+}
 
-    public static string Prompt(string message)
-    {
-        Console.Write(message + " ");
-        return Console.ReadLine().Trim().ToLower();
+class Program
+{
+    static void Main(string[] args) {
+        Book book1 = new Book();
+        book1.SetAuthor("Smith");
+        book1.SetBookTitle("A great book");
+
+        Console.WriteLine(book1.GetBookInfo());
+
+        PictureBook book2 = new PictureBook();
+        book2.SetAuthor("Jones");
+        book2.SetBookTitle("A wonderful Picture Book");
+        book2.SetIllustrator("Burton");
+
+        Console.WriteLine(book2.GetBookInfo());
+        
+        Console.WriteLine(book2.GetPictureBookInfo());
     }
 }
