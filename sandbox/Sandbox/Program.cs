@@ -913,57 +913,125 @@
 // }
 
 // BOOK
-public class Book
-{
-    protected string _author = "";
-    protected string _title = "";
+// public class Book
+// {
+//     protected string _author = "";
+//     protected string _title = "";
 
-    public void SetAuthor(string author)
-    {
-        _author = author;
-    }
+//     public void SetAuthor(string author)
+//     {
+//         _author = author;
+//     }
 
-    public void SetBookTitle(string title)
-    {
-        _title = title;
-    }
+//     public void SetBookTitle(string title)
+//     {
+//         _title = title;
+//     }
 
-    public string GetBookInfo()
-    {
-        return $"{_title} by {_author}";
-    }
-}
+//     public string GetBookInfo()
+//     {
+//         return $"{_title} by {_author}";
+//     }
+// }
 
-public class PictureBook: Book
-{
-    private string _illustrator = "";
-    public void SetIllustrator(string illustrator)
-    {
-        _illustrator = illustrator;
-    }
+// public class PictureBook: Book
+// {
+//     private string _illustrator = "";
+//     public void SetIllustrator(string illustrator)
+//     {
+//         _illustrator = illustrator;
+//     }
 
-    public string GetPictureBookInfo()
-    {
-        return $"{_title} by {_author} illustrated by {_illustrator}.";
-    }
-}
+//     public string GetPictureBookInfo()
+//     {
+//         return $"{_title} by {_author} illustrated by {_illustrator}.";
+//     }
+// }
+
+// class Program
+// {
+//     static void Main(string[] args) {
+//         Book book1 = new Book();
+//         book1.SetAuthor("Smith");
+//         book1.SetBookTitle("A great book");
+
+//         Console.WriteLine(book1.GetBookInfo());
+
+//         PictureBook book2 = new PictureBook();
+//         book2.SetAuthor("Jones");
+//         book2.SetBookTitle("A wonderful Picture Book");
+//         book2.SetIllustrator("Burton");
+
+//         Console.WriteLine(book2.GetBookInfo());
+        
+//         Console.WriteLine(book2.GetPictureBookInfo());
+//     }
+// }
 
 class Program
 {
     static void Main(string[] args) {
-        Book book1 = new Book();
-        book1.SetAuthor("Smith");
-        book1.SetBookTitle("A great book");
+        // Console.WriteLine("Going to sleep for a second...");
 
-        Console.WriteLine(book1.GetBookInfo());
+        // Thread.Sleep(5000);
 
-        PictureBook book2 = new PictureBook();
-        book2.SetAuthor("Jones");
-        book2.SetBookTitle("A wonderful Picture Book");
-        book2.SetIllustrator("Burton");
-
-        Console.WriteLine(book2.GetBookInfo());
+        // Console.WriteLine("I'm back!!");
         
-        Console.WriteLine(book2.GetPictureBookInfo());
+        // Console.Write(5);
+        // Thread.Sleep(1000);
+        // Console.Write("\b \b");
+        // Console.Write(4);
+        // Thread.Sleep(1000);
+        // Console.Write("\b \b");
+        // Console.Write(3);
+        // Thread.Sleep(1000);
+        // Console.Write("\b \b");
+        // Console.Write(2);
+        // Thread.Sleep(1000);
+        // Console.Write("\b \b");
+        // Console.Write(1);
+        // Thread.Sleep(1000);
+        // Console.Write("\b \b");
+        // Console.Write("Done!");
+
+        // for (int i = 5; i > 0; i--)
+        // {
+        //     Console.Write(i);
+        //     Thread.Sleep(1000);
+        //     Console.Write("\b \b");
+        // }
+
+        // Console.Write("Done!");
+
+        // List<string> animationStrings = new List<string>();
+        // animationStrings.Add("|");
+        // animationStrings.Add("/");
+        // animationStrings.Add("-");
+        // animationStrings.Add("\\");
+        // animationStrings.Add("|");
+        // animationStrings.Add("/");
+        // animationStrings.Add("-");
+        // animationStrings.Add("\\");
+
+        // DateTime startTime = DateTime.Now;
+        // DateTime endTime = startTime.AddSeconds(10);
+
+        // Console.WriteLine(startTime);
+        // Console.WriteLine(endTime);
+
+    //     while (DateTime.Now < endTime) 
+    //     {
+    //         foreach(string s in animationStrings)
+    //         {
+    //             Console.Write(s);
+    //             Thread.Sleep(200);
+    //             Console.Write("\b \b");
+    //         }
+    //     }
+
+        Random r = new Random();
+
+        Console.WriteLine(r.Next(1, 10));
+        Console.WriteLine(r.Next(1, 10));      
     }
 }
