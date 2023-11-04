@@ -2,11 +2,18 @@ public class Activity
 {
     protected string _activityName = "";
     private string _activityDescription = "";
+    protected int _counts = 0;
 
     private List<string> _spinnerList = new List<string>
     {
         "|", "/", "-", "\\", "|", "/", "-", "\\"
     };
+    
+    public Activity()
+    {
+        _activityName = "";
+        _activityDescription = "";
+    }
 
     public Activity(string activityName, string activityDescription)
     {

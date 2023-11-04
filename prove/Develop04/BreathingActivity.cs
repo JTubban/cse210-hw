@@ -39,6 +39,7 @@ public class BreathingActivity: Activity
         }
 
         Console.WriteLine("Well done!!!");
+
         // called spinner
         GetSpinner();
         Console.WriteLine(GetConclusion(int.Parse(duration), _activityName));

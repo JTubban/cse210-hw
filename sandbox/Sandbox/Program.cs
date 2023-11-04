@@ -968,9 +968,9 @@
 //     }
 // }
 
-class Program
-{
-    static void Main(string[] args) {
+// class Program
+// {
+//     static void Main(string[] args) {
         // Console.WriteLine("Going to sleep for a second...");
 
         // Thread.Sleep(5000);
@@ -1029,9 +1029,27 @@ class Program
     //         }
     //     }
 
-        Random r = new Random();
+        // Random r = new Random();
 
-        Console.WriteLine(r.Next(1, 10));
-        Console.WriteLine(r.Next(1, 10));      
+        // Console.WriteLine(r.Next(1, 10));
+        // Console.WriteLine(r.Next(1, 10));      
+// }
+
+class Program
+{
+    static void Main(string[] args)
+    {
+
+    }
+
+}
+
+public class Number
+{
+    private int _number = 0;
+
+    public void Accumulator()
+    {
+        _number = _number + 1;
     }
 }

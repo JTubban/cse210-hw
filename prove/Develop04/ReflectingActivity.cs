@@ -58,7 +58,7 @@ public class ReflectingActivity: Activity
         {
             int randomNumber2 = _generateRandom.Next(0, _reflectionQuestions.Count - 1);
             Console.Write($"> {_reflectionQuestions[randomNumber2]}");
-            GetSpinner(15);
+            GetSpinner(5);
             Console.WriteLine();
         }
 
