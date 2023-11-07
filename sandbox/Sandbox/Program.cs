@@ -1035,21 +1035,38 @@
         // Console.WriteLine(r.Next(1, 10));      
 // }
 
-class Program
-{
-    static void Main(string[] args)
-    {
+// class Program
+// {
+//     static void Main(string[] args)
+//     {
 
-    }
+//     }
 
-}
+// }
 
-public class Number
-{
-    private int _number = 0;
+// public class Number
+// {
+//     private int _number = 0;
 
-    public void Accumulator()
-    {
-        _number = _number + 1;
-    }
-}
+//     public void Accumulator()
+//     {
+//         _number = _number + 1;
+//     }
+// }
+
+// POLYMORPHISM
+// HourlyEmployee h = new HourlyEmployee();
+// EmployeeTesting t = new EmployeeTesting();
+
+// Console.WriteLine(h.CalculatePay());
+// Console.WriteLine(t.CalculatePay());
+
+// List<Employee> employees = new List<Employee>();
+// employees.Add(new EmployeeTesting());
+// employees.Add(new HourlyEmployee());
+
+// foreach(Employee employee in employees)
+// {
+//     Console.WriteLine(employee.CalculatePay());
+// }
+
