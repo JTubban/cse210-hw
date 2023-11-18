@@ -74,7 +74,7 @@ public class Journal
         Console.WriteLine($"'{filename}' Loaded!");
     }
 
-    public void SaveFile() 
+    public void SaveFile()
     {
         Console.WriteLine("What is the filename?");
         string fileName = Console.ReadLine();

@@ -1,0 +1,4 @@
+0
+scripture reading, read my scripture before bed time., 100, False, False,
+wake up early, always wake up at 6am, 200, False, True,
+attend temple, perform ordinances, 50, False, False, 3, 0, 1000

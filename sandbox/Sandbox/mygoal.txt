@@ -1,0 +1,4 @@
+50
+scripture reading,  read my scripture before bed,  100, True, False,
+sleep early during the night,  sleep always at 9pm,  200, True, False,
+wake up early,  wake up at 6am,  50, False, False, 7, 1, 1000
